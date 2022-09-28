@@ -3,11 +3,13 @@ import numpy as np
 from keras.applications.vgg16 import preprocess_input, VGG16, decode_predictions
 from keras_preprocessing.image import img_to_array, load_img
 
+
+
 model = VGG16(weights='imagenet')
 
-# img = np.load("advers.npy")
-img = load_img("advers.png", target_size=(224, 224))
-img = img_to_array(img)
+img = np.load("adversPGD.npy")
+# img = load_img("adversPGD.png", target_size=(224, 224))
+# img = img_to_array(img)
 
 
 image = img.reshape((1, 224, 224, 3))
